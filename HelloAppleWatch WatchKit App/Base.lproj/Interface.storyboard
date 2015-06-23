@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
@@ -10,7 +10,7 @@
             <objects>
                 <controller identifier="InitialController" title="Meat Cook" spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <group width="1" alignment="left" layout="vertical" id="unJ-VG-grF">
+                        <group width="1" alignment="left" layout="vertical" radius="10" id="unJ-VG-grF">
                             <items>
                                 <timer alignment="center" textAlignment="center" id="o6N-iq-tEg">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
@@ -22,16 +22,17 @@
                                     </connections>
                                 </button>
                             </items>
+                            <color key="backgroundColor" red="1" green="0.36918938509999999" blue="0.67616551889999998" alpha="1" colorSpace="calibratedRGB"/>
                         </group>
                         <label alignment="center" text="Weight:16 oz" id="Jhk-ep-m77"/>
-                        <group width="1" alignment="left" spacing="5" id="iqh-PV-f2C">
+                        <group width="1" alignment="left" spacing="20" id="iqh-PV-f2C">
                             <items>
-                                <button alignment="center" backgroundImage="wechat" id="nJe-6V-5dn">
+                                <button alignment="center" backgroundImage="minus" id="nJe-6V-5dn">
                                     <connections>
                                         <action selector="onMinusButton" destination="AgC-eL-Hgc" id="AUL-aK-dLx"/>
                                     </connections>
                                 </button>
-                                <button alignment="center" backgroundImage="weibo" id="lA6-Xd-3tO">
+                                <button alignment="center" backgroundImage="plus" id="lA6-Xd-3tO">
                                     <connections>
                                         <action selector="onPlusButton" destination="AgC-eL-Hgc" id="GyR-ZH-WUB"/>
                                     </connections>
@@ -46,12 +47,22 @@
                                         <action selector="onTempChange:" destination="AgC-eL-Hgc" id="Rrw-Vk-pPF"/>
                                     </connections>
                                 </slider>
+                                <group width="1" alignment="left" id="gF5-6I-2ai">
+                                    <items>
+                                        <switch width="1" alignment="left" title="Metric" id="DW0-Co-lgU">
+                                            <connections>
+                                                <action selector="onMetricChanged:" destination="AgC-eL-Hgc" id="vUs-u8-pa5"/>
+                                            </connections>
+                                        </switch>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="cookLabel" destination="ejU-vP-THW" id="mgd-mO-JCH"/>
                         <outlet property="timer" destination="o6N-iq-tEg" id="xme-Lh-msc"/>
+                        <outlet property="timerButton" destination="rcs-W2-161" id="yLK-BE-2mP"/>
                         <outlet property="weightLabel" destination="Jhk-ep-m77" id="d4A-Hi-Hbi"/>
                     </connections>
                 </controller>
